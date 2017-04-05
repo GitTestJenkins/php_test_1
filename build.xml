@@ -5,7 +5,7 @@
   <echo msg="${message}"/>
  </target>
  <target name="phploc" description="Measure size">
-  <exec executable="$/vendor/bin/phploc" logoutput="true" >
+  <exec executable="$/phploc" logoutput="true" >
    <arg value="--log-csv"/>
    <arg value="${project.basedir}/phploc.csv"/>
    <arg path="${project.basedir}"/>
