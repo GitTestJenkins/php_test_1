@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="PHPLOC" default="welcome" basedir="." description="a demo project">
+<project name="PHPLOC" default="phploc" basedir="." description="a demo project">
  <target name="phploc" description="Measure size">
   <exec executable="$/phploc" logoutput="true" >
    <arg value="--log-csv"/>
