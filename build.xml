@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HelloWorld" default="welcome" basedir="." description="a demo project">
+ <property name="message" value="Hello World!"/>
+ <target name="welcome">
+  <echo msg="${message}"/>
+ </target>
+ <target name="phploc" description="Measure size">
+  <exec executable="$/vendor/bin/phploc" logoutput="true" >
+   <arg value="--log-csv"/>
+   <arg value="${project.basedir}/phploc.csv"/>
+   <arg path="${project.basedir}"/>
+  </exec>
+ </target>
+	</project>
