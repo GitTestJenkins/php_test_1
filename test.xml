@@ -63,8 +63,6 @@
    <arg value="--reportfile" />
    <arg path="/var/lib/jenkins/workspace/senderstandort-DB/build/logs/pmd.xml" />
   </exec>
-  
-  </target>
 
   <property name="phpmd.done" value="true"/>
  </target>
