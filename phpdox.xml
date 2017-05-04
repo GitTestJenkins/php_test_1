@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpdox xmlns="http://xml.phpdox.net/config">
+ <project name="Sender_DB" source="../controllers,../models,../views" workdir="${basedir}/phpdox">
+  <collector publiconly="false">
+   <include mask="*.php" />
+   <exclude mask="*autoload.php" />
+  </collector>
+
+  <generator output="${basedir}/api">
+   <enrich base="logs">
+    <source type="build" />
+    <source type="phploc" />
+    <source type="checkstyle" />
+    <source type="pmd" />
+   </enrich>
+
+   <build engine="html" enabled="true" output="api">
+    <file extension="html" />
+   </build>
+  </generator>
+ </project>
+</phpdox>
