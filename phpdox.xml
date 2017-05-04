@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpdox xmlns="http://xml.phpdox.net/config">
+ <project name="Sender_DB" source="/var/lib/jenkins/workspace/senderstandort-DB/controllers" workdir="${basedir}/phpdox">
+  <collector publiconly="false">
+   <include mask="*.php" />
+   <exclude mask="*autoload.php" />
+  </collector>
+
+  <generator output="${basedir}">
+   
+   <build engine="html" enabled="true" output="api">
+    <file extension="html" />
+   </build>
+  </generator>
+ </project>
+</phpdox>
