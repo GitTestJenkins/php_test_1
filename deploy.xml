@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Sender_DB_deploy" default="sshcopy">
+
+
+<target name="clean"
+			unless="clean.done"
+			depends=""
+			description="delete senderstandort-db/">
+		<sshexec host="l-intern.rz.ndr-net.de"
+		  username="dudd"
+		  password="Antje007"
+		  trust="yes"
+		  command="rm -r /srv/www/htdocs/vhosts/intern/htdocs/anwendungen/senderstandort-db/"
+		/>
+		<property name="clean.done" value="true"/>
+</target>
+
+<target name="prepare"
+			unless="prepare.done"
+			depends="clean"
+			description="create senderstandort-db/">
+		<sshexec host="l-intern.rz.ndr-net.de"
+		  username="dudd"
+		  password="Antje007"
+		  trust="yes"
+		  command="mkdir /srv/www/htdocs/vhosts/intern/htdocs/anwendungen/senderstandort-db/"
+		/>
+		<property name="prepare.done" value="true"/>
+</target>
+
+<target name="sshcopy"
+			unless="sshcopy.done"
+			depends="clean, prepare"
+			description="copy w SSH">
+		<scp remoteTodir="dudd@l-intern.rz.ndr-net.de:/srv/www/htdocs/vhosts/intern/htdocs/anwendungen/senderstandort-db/"
+		  password="Antje007"
+		  trust="yes"
+		  sftp="true">
+			<fileset dir="/var/lib/jenkins/workspace/senderstandort-DB/">
+			  <include name="**/*"/>
+			</fileset>
+		</scp>
+		<property name="sshcopy.done" value="true"/>
+</target>
+	
+</project>
